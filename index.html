@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Sliding Bar</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="Container">
+        <div class="box ">
+            <h1 id="hh1">Heading 1<span><i class="fa-regular fa-square-minus"></i></span></h1>
+            <p class="visible">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus maxime in nisi earum
+                possimus, quas
+                sequi alias dolor molestias saepe eligendi laborum at incidunt, nostrum similique laudantium id ex quam?
+            </p>
+        </div>
+        <div class="box">
+            <h1>Heading 2<span><i class="fa-regular fa-square-plus"></i></span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae eligendi esse illo
+                temporibus ullam ipsam non molestias nobis alias, hic eaque omnis! Quas sapiente praesentium minima
+                doloremque enim quidem.</p>
+        </div>
+        <div class="box">
+            <h1>Heading 3<span><i class="fa-regular fa-square-plus"></i></span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, quia quae mollitia labore
+                nihil id eum debitis minima a vitae error, minus repudiandae quisquam enim! Minima deleniti molestiae
+                similique consequatur!</p>
+        </div>
+        <div class="box">
+            <h1>Heading 4<span><i class="fa-regular fa-square-plus"></i></span></h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto neque recusandae non
+                quaerat? Magni laborum culpa id ad hic dicta nihil asperiores odit nisi consequuntur minima illo, alias
+                magnam sit.</p>
+        </div>
+    </div>
+    <script>
+        let button = document.querySelectorAll("i");
+        for (let i = 0; i < button.length; i++) {
+            button[i].onclick = () => {
+                let para = button[i].parentElement.parentElement.nextElementSibling;
+                if (para.classList.contains("visible")) {
+                    para.classList.remove("visible");
+                    button[i].classList.remove("fa-square-minus");
+                    button[i].classList.add("fa-square-plus");
+                    button[i].parentElement.parentElement.style.borderBottomRightRadius="10px"
+                    button[i].parentElement.parentElement.style.borderBottomLeftRadius="10px"
+                }
+                else {
+                    let para2 = document.querySelectorAll("p");
+                    for (let j = 0; j < para2.length; j++) {
+                        if (para2[j].classList.contains("visible")) {
+                            para2[j].classList.remove("visible");
+                            button[j].classList.remove("fa-square-minus");
+                            button[j].classList.add("fa-square-plus");
+                            button[i].parentElement.parentElement.style.borderBottomRightRadius = "10px"
+                            button[i].parentElement.parentElement.style.borderBottomLeftRadius = "10px"
+                        }
+                    }
+                    para.classList.add("visible");
+                    button[i].parentElement.parentElement.style.borderBottomRightRadius = "0px"
+                    button[i].parentElement.parentElement.style.borderBottomLeftRadius = "0px"
+                    button[i].classList.add("fa-square-minus");
+                    button[i].classList.remove("fa-square-plus");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

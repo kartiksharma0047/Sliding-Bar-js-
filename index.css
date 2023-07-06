@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#Container{
+    width: 40%;
+    margin: 50px auto;
+}
+.box{
+    margin: 5px 0;
+}
+h1{
+    border-radius: 10px;
+    background-color: rgba(0, 130, 130, 0.703);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+#hh1{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+i{
+    transition: all 0.8s;
+}
+i:hover{
+    transform: scale(1.101);
+}
+p{
+    height: 0px;
+    transition: all 0.8s;
+    overflow: hidden;
+}
+.fa-regular{
+    cursor:pointer;
+}
+.visible{
+    padding: 10px;
+    transition: all 0.8s;
+    display: block;
+    height: 80px;
+    border:1px solid rgb(0, 106, 138) ;
+    border-top: 0px solid transparent;  
+    background-color: rgb(129, 198, 222);
+}
+
